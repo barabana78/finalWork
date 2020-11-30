@@ -1,0 +1,433 @@
+/*GENERAL*/
+body * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
+  padding: 0;
+  margin: 0;
+  background-color: #98b8cf;
+}
+
+a {
+  text-decoration: none;
+  /* color: #262626; */
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+}
+
+h1,
+h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.wrapper {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.spacer {
+  min-height: calc(100vh - 60px);
+}
+
+#container {
+  background-color: #212534;
+  max-width: 600px;
+  min-height: 300px;
+  margin: 0 auto;
+}
+
+.formHeader {
+  background-color: #2b3040;
+  display: flex;
+  justify-content: space-around;
+}
+
+.tab {
+  width: 150px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0.5;
+  padding: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.tab:hover {
+  opacity: 1;
+  border-bottom: 2px solid #ffffff;
+}
+
+.active {
+  opacity: 1;
+  border-bottom: 2px solid #ffffff;
+}
+
+.tabContent {
+  overflow: hidden;
+}
+
+.hide {
+  display: none;
+}
+
+.regForm {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 70px;
+}
+
+.logInput,
+.regInput {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  padding: 2px;
+  background-color: #212534;
+  opacity: 0.5;
+  border: none;
+  border-bottom: solid yellow 1px;
+}
+
+.logInput:hover,
+.logButton:hover,
+.regInput:hover,
+.regButton:hover,
+.buttonCompany:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.logInput:focus,
+.regInput:focus {
+  box-shadow: 0 0 15px rgba(120, 147, 221, 0.9);
+  outline: 0;
+  opacity: 1;
+  cursor: text;
+}
+
+.logLabel,
+.regLabel {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.logButton,
+.regButton,
+.buttonCompany {
+  font-size: 20px;
+  padding: 2px;
+  margin-top: 25px;
+  margin-bottom: 0;
+  margin-left: auto;
+  width: 200px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #f57f17;
+  opacity: 0.5;
+}
+
+.logButton:focus,
+.regButton:focus,
+.buttonCompany:focus {
+  outline: 0;
+}
+
+/*LOADER*/
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+}
+.lds-dual-ring:after {
+  content: ' ';
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*NAVBAR*/
+
+nav,
+footer {
+  background-color: #2b3040;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+}
+
+.navBar a {
+  color: #ffffff;
+  border-bottom: none;
+}
+
+.logo {
+  color: red;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.navList {
+  display: flex;
+  margin: 0;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.navItem {
+  padding: 15px;
+  cursor: pointer;
+}
+
+.navItem:hover {
+  background-color: #212534;
+}
+.navItem:last-child:hover {
+  background-color: #f57f17;
+}
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding: 15px 0;
+  color: yellow;
+}
+
+.red {
+  width: 500px;
+  height: 2px;
+  background-color: red;
+}
+
+/*CompanyCard*/
+
+.company,
+.companies {
+  border-collapse: collapse;
+  border: solid 2px black;
+  margin: 0 auto;
+  padding: 5px;
+  width: 600px;
+}
+
+.company th,
+.company td,
+.companies th,
+.companies td {
+  padding: 5px;
+  border: solid 1px black;
+}
+
+.company th,
+.companies th {
+  background-color: royalblue;
+}
+
+.company td,
+.companies td {
+  background-color: rgba(120, 147, 221, 0.9);
+}
+
+.tabRowHeight {
+  height: 55px;
+}
+
+.company tr:hover,
+.companies tr:hover,
+.inputEditCompany:focus {
+  background-color: steelblue;
+}
+
+.inputEditCompany {
+  font-size: 17px;
+  background-color: transparent;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+.company .trLast {
+  border-top: solid 2px black;
+  border-bottom: solid 2px #98b8cf;
+  border-left: solid 2px #98b8cf;
+  border-right: solid 2px #98b8cf;
+}
+
+.company .buttonContainer {
+  background-color: #98b8cf;
+}
+
+.buttonEdit {
+  margin: 0;
+}
+
+.buttonSave {
+  margin: 0;
+  background-color: green;
+}
+
+.buttonCancel {
+  margin-top: 0;
+  margin-right: 30%;
+}
+
+/*COMPANY LIST*/
+
+.posAbsolutCenter {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 40%;
+}
+
+.openLink {
+  cursor: pointer;
+  color: black;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.openLink:hover {
+  color: yellow;
+}
+.cellCenter {
+  text-align: center;
+}
+
+.cellDel:hover {
+  color: red;
+}
+
+.companiesNameCell {
+  display: flex;
+  justify-content: space-around;
+}
+
+.arrUp,
+.arrDown {
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.arrUp:hover,
+.arrDown:hover{
+  color: white;
+}
+
+.arrUp:active {
+  transform: translateY(-10px);
+}
+
+.arrDown:active {
+  transform: translateY(10px);
+}
+
+/*ALERT*/
+
+/* .alert {
+  position: absolute;
+  left: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  min-height: 50px;
+  background-color: black;
+  color: red;
+  font-size: 20px;
+} */
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 90;
+}
+.popup_inner {
+  font-size: 20px;
+  position: absolute;
+  left: 30%;
+  right: 30%;
+  top: 15%;
+  bottom: 45%;
+  margin: auto;
+  padding: 10px;
+  overflow: hidden;
+  background-color: chocolate;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clousePopup {
+  position: absolute;
+  top: -100%;
+  border: none;
+  border-radius: 50%;
+  padding: 3px 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 25px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+}
+
+.popup_inner:hover .clousePopup {
+  top: 5%;
+  right: 3%;
+  transition: all 0.3s ease-in;
+  transform: translateY(5%);
+}
+
+.clousePopup:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+}
+

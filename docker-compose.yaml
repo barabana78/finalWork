@@ -1,0 +1,41 @@
+version: "3"
+services:
+  api:
+    container_name: 'api'
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    command: sh -c "npm && npm start:debug"
+    volumes:
+      - /app/node_modules
+    ports:
+      - '${API_GATEWAY_PORT_EXT:-5000}:5000'
+      - '${API_GATEWAY_DEBUG_PORT_EXT:-9229}:9229'
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+
+  api-migrations:
+    container_name: 'migrations'
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    command: sh -c "npm run migrations:run"
+    volumes:
+      - /app/node_modules
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+
+  postgres:
+    container_name: 'postgres'
+    image: postgres:12.3-alpine
+    restart: always
+    ports:
+      - '${POSTGRES_PORT_EXT:-5432}:5432'
+    env_file:
+      - .env
+    volumes:
+      - ./volumes/pgdata:/var/lib/postgresql/data
